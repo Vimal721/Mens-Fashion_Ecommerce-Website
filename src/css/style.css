@@ -94,7 +94,7 @@ nav{
     height: 50px;
     width: 320px;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 50px 11px 20px;
     font-size: 16px;
 }
 
@@ -196,6 +196,7 @@ input::placeholder{
     width: 100%;
     z-index: 1000; 
     background-color: var(--top-nav-color);
+    padding: 0 10px;
 }
 .top-nav ul{
     height: 60px;
@@ -203,6 +204,7 @@ input::placeholder{
     align-items: center;
     justify-content: center;
     gap: 50px;
+    padding-left: 0 ;
 }
 
 .top-nav ul li a{
@@ -602,6 +604,7 @@ input::placeholder{
     margin-top: 10px !important;
     font-family: var(--font-jost);
     font-size: 18px;
+    color: var(--icon-color);
 }
 
 .footer-list{
@@ -645,6 +648,7 @@ input::placeholder{
     width: 0px;
     background-color: var(--title-color);
     transition: .3s;
+    border-radius: 10px;
 }
 
 .footer-list ul li a:hover {
