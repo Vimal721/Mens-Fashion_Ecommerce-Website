@@ -307,6 +307,9 @@
     .show-cart {
         width: 320px;
     }
+    .total{
+        width: 320px;
+    }
 }
 
 @media only screen and (max-width: 480px){
@@ -472,6 +475,10 @@
 
     /* show cart */
     .show-cart {
+        width: 260px;
+    }
+
+    .total{
         width: 260px;
     }
 
