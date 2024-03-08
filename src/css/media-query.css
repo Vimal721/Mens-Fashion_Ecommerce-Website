@@ -21,9 +21,9 @@
     }
     
     #items-added{
-        right: 18px;
-        width: 13px;
-        font-size: 10px;
+        width: 16px;
+        font-size: 9px;
+        padding: 2px;
     }
 
     /* service */
@@ -187,8 +187,8 @@
     }
     
     #items-added{
-        right: 19px;
-        width: 11px;
+        right: 16px;
+        width: 16px;
         font-size: 9px;
     }
 
@@ -302,6 +302,11 @@
     .footer-list{
         gap: 20px;
     }
+
+    /* show cart */
+    .show-cart {
+        width: 320px;
+    }
 }
 
 @media only screen and (max-width: 480px){
@@ -318,9 +323,9 @@
     }
     
     #items-added{
-        right: 17px;
-        width: 10px;
-        font-size: 8px;
+        right: 14px;
+        width: 15px;
+        height: 16px;
     }
 
     /* top nav */
@@ -463,4 +468,22 @@
     .accessories-list img{
         max-width: 200px;
     }
-}   
+
+
+    /* show cart */
+    .show-cart {
+        width: 260px;
+    }
+
+    .item-image img {
+        width: 50px; 
+    }
+    
+    .item-name {
+        font-size: 15px;
+    }
+    
+    .item-quantity{
+        gap: 7px;
+    }
+}
