@@ -69,6 +69,10 @@ h3{
 }
 
 
+.main{
+    margin-top: 140px;
+}
+
 /* navigation */
 .nav-box{
     position: fixed;
@@ -162,38 +166,6 @@ input::placeholder{
     font-family: var(--font-roboto);
     padding: 2px;
 }
-
-/* menu bar button */
-/* .nav-open-btn {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 8px;
-    outline: none;
-    border: none;
-    background-color: inherit;
-}
-
-.nav-open-btn span {
-    width: 20px;
-    height: 2px;
-    background: var(--black);
-    transition: 0.3s;
-}
-
-.nav-open-btn span:nth-child(2) {
-    transform: scaleX(0.5);
-    transform-origin: right;
-}
-
-.nav-open-btn:is(:hover, :focus) span:nth-child(2) { 
-    transform: scaleX(1); 
-}
-  
-.nav-active{
-    visibility: hidden;
-} */
-
 
 /* top navigation */
 .top-nav{
@@ -304,18 +276,20 @@ input::placeholder{
     font-size: 14px;
 }
 
-
-/* clothing */
-.clothing-title{
+/* Clothing and Accessories Section */
+.clothing-title,
+.accessories-title {
     font-size: 36px;
     font-family: var(--font-jost);
     font-weight: 600;
     color: var(--title-color);
     text-transform: uppercase;
     padding: 0 20px;
+    margin-top: 70px;
 }
 
-.clothing-products{
+.clothing-products,
+.accessories-products {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -325,11 +299,8 @@ input::placeholder{
     padding: 0 20px;
 }
 
-.clothing-list {
-    margin-bottom: 20px;
-}
-
-.clothing-list-item{
+.clothing-list-item,
+.accessories-list-item {
     position: relative;
     display: flex;
     justify-content: center;
@@ -346,152 +317,14 @@ input::placeholder{
     padding: 20px;
 }
 
-/* clothing button */
-.clothing-btn {
-    position: absolute;
-    bottom: -60px;
-    background-color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: var(--box-shadow-dark);
-    border-radius: 10px;
-    transition: .5s;
-}
-
-.clothing-list-item:hover .clothing-btn{
-    bottom:25px;
-}
-
-.clothing-btn i:not(.clothing-cart-btn i) {
-    font-size: 20px;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--white);
-    color: var(--black);
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-.clothing-cart-btn {
-    background-color: var(--secondary-bg-color); 
-    color: var(--white);
-    padding: 10px;
-    height: 50px;
-    width: 140px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-}
-
-.clothing-cart-btn span {
-    padding-right: 5px;
-    cursor: pointer;
-}
-
-.clothing-cart-btn i {
-    padding: 5px;
-}
-
-.clothing-btn i:first-child:not(.clothing-cart-btn i){
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.clothing-btn i:last-child:not(.clothing-cart-btn i){
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.clothing-btn i:hover:first-child:not(.clothing-cart-btn i){
-    color: var(--secondary-bg-color);
-    border: 2px solid var(--secondary-bg-color);
-    border-right: none;
-    transition: color 0.5s, border .5s;
-}
-
-.clothing-btn i:hover:last-child{
-    color: var(--secondary-bg-color);
-    border: 2px solid var(--secondary-bg-color);
-    border-left: none;
-    transition: color 0.5s, border 0.5s;
-}
-
-.clothing-cart-btn:hover {
-    background-color: var(--white);
-    color: var(--secondary-bg-color);
-    border: 2px solid var(--secondary-bg-color); 
-    transition: background-color 0.5s, border 0.1s, color 0.5s;
-}
-
-/* clothing details */
-.clothing-detail{
-    margin-top: 15px;
-}
-.clothing-detail h3{
-    font-size: 28px;
-    font-family: var(--font-jost);
-    color: var(--title-color);
-}
-.clothing-detail p{
-    font-family: var(--font-poppins);
-    color: var(--placeholder);
-    font-weight: 500;
-}
-
-.clothing-detail span{
-    font-size: 22px;
-    font-family: var(--font-poppins);
-    font-weight: 500;
-    color: var(--secondary-bg-color);
-}
-
-
-/* accessories */
-.accessories-title{
-    font-size: 36px;
-    font-family: var(--font-jost);
-    font-weight: 600;
-    color: var(--title-color);
-    text-transform: uppercase;
-    padding: 0 20px;
-    margin-top: 70px;
-}
-.accessories-products{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    justify-content: center;
-    gap: 25px;
-    padding: 0 20px;
-}
-
-.accessories-list {
-    margin-bottom: 20px;
-}
-
-.accessories-list-item{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    overflow: hidden;
-    background-color: var(--top-nav-color);
-    border-radius: 20px;
-    height: 320px;
-    width: 280px;
-}
-
 .accessories-list img{
     max-width: 300px;
-    padding: 40px;
+    padding: 50px;
 }
 
-/* accessories button */
+
+/* Clothing and Accessories Button */
+.clothing-btn,
 .accessories-btn {
     position: absolute;
     bottom: -60px;
@@ -504,10 +337,12 @@ input::placeholder{
     transition: .5s;
 }
 
-.accessories-list-item:hover .accessories-btn{
-    bottom:25px;
+.clothing-list-item:hover .clothing-btn,
+.accessories-list-item:hover .accessories-btn {
+    bottom: 25px;
 }
 
+.clothing-btn i:not(.clothing-cart-btn i),
 .accessories-btn i:not(.accessories-cart-btn i) {
     font-size: 20px;
     height: 50px;
@@ -521,78 +356,92 @@ input::placeholder{
     border: 2px solid transparent;
 }
 
+.clothing-cart-btn,
 .accessories-cart-btn {
-    background-color: var(--secondary-bg-color); 
+    background-color: var(--secondary-bg-color);
     color: var(--white);
     padding: 10px;
     height: 50px;
     display: flex;
     align-items: center;
+    font-size: 16px;
     border: 2px solid transparent;
 }
 
+.clothing-cart-btn span,
 .accessories-cart-btn span {
     padding-right: 5px;
     cursor: pointer;
 }
 
+.clothing-cart-btn i,
 .accessories-cart-btn i {
     padding: 5px;
 }
 
-.accessories-btn i:first-child:not(.accessories-cart-btn i){
+.clothing-btn i:first-child:not(.clothing-cart-btn i),
+.accessories-btn i:first-child:not(.accessories-cart-btn i) {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.accessories-btn i:last-child:not(.accessories-cart-btn i){
+.clothing-btn i:last-child:not(.clothing-cart-btn i),
+.accessories-btn i:last-child:not(.accessories-cart-btn i) {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-.accessories-btn i:hover:first-child:not(.accessories-cart-btn i){
+.clothing-btn i:hover:first-child:not(.clothing-cart-btn i),
+.accessories-btn i:hover:first-child:not(.accessories-cart-btn i) {
     color: var(--secondary-bg-color);
     border: 2px solid var(--secondary-bg-color);
     border-right: none;
-    transition: color 0.5s, border 0.5s; 
+    transition: color 0.5s, border 0.5s;
 }
-.accessories-btn i:hover:last-child{
+
+.clothing-btn i:hover:last-child:not(.clothing-cart-btn i),
+.accessories-btn i:hover:last-child:not(.accessories-cart-btn i) {
     color: var(--secondary-bg-color);
     border: 2px solid var(--secondary-bg-color);
     border-left: none;
-    transition: color 0.5s, border 0.5s; 
+    transition: color 0.5s, border 0.5s;
 }
 
+.clothing-cart-btn:hover,
 .accessories-cart-btn:hover {
     background-color: var(--white);
     color: var(--secondary-bg-color);
-    border: 2px solid var(--secondary-bg-color); 
+    border: 2px solid var(--secondary-bg-color);
     transition: background-color 0.5s, border 0.1s, color 0.5s;
 }
 
-/* accessories details */
-.accessories-detail{
+/* Clothing and Accessories Details */
+.clothing-detail,
+.accessories-detail {
     margin-top: 15px;
 }
-.accessories-detail h3{
+
+.clothing-detail h3,
+.accessories-detail h3 {
     font-size: 28px;
     font-family: var(--font-jost);
     color: var(--title-color);
 }
-.accessories-detail p{
+
+.clothing-detail p,
+.accessories-detail p {
     font-family: var(--font-poppins);
     color: var(--placeholder);
     font-weight: 500;
 }
 
-.accessories-detail span{
+.clothing-detail span,
+.accessories-detail span {
     font-size: 22px;
     font-family: var(--font-poppins);
     font-weight: 500;
     color: var(--secondary-bg-color);
 }
-
-
 
 /* Footer */
 #footer{
@@ -627,6 +476,7 @@ input::placeholder{
     gap: 70px;
     margin-top: 20px;
 }
+
 .footer-item h3{
     font-family: var(--font-roboto);
     font-size: 28px;

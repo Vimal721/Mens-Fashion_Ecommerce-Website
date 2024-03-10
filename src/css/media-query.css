@@ -1,4 +1,5 @@
 @media only screen and (max-width: 1100px) {
+    /* nav-bar */
     .searchbar input{
         height: 40px;
         width: 280px;
@@ -53,90 +54,55 @@
     }
 }
 
-
 @media only screen and (max-width: 1010px) {
-    .clothing-list-item{
-        height: 280px;
-        max-width: 240px;
-    }    
-
-    .clothing-btn i:not(.clothing-cart-btn i) {
-        font-size: 18px;
-        height: 40px;
-        width: 40px;
-    }
-    
-    .clothing-cart-btn {
-        height: 40px;
-        width: 120px;
-        padding: 9px;
-    }
-
-    .clothing-cart-btn span{
-        font-size: 14px;
-        padding-right: 3px;
-    }
-
-    .clothing-cart-btn i {
-        font-size: 14px;
-        padding: 3px;
-    }
-
-    .clothing-detail h3{
-        font-size: 25px;
-    }
-
-    .clothing-detail span{
-        font-size: 20px;
-    }
-    
-
+    /* Clothing and accessories sections */
+    .clothing-list-item,
     .accessories-list-item{
         height: 280px;
         max-width: 240px;
     }    
 
+    .clothing-btn i:not(.clothing-cart-btn i),
     .accessories-btn i:not(.accessories-cart-btn i) {
         font-size: 18px;
         height: 40px;
         width: 40px;
     }
     
+    .clothing-cart-btn,
     .accessories-cart-btn {
         height: 40px;
         width: 120px;
         padding: 9px;
     }
 
+    .clothing-cart-btn span,
     .accessories-cart-btn span{
         font-size: 14px;
         padding-right: 3px;
     }
 
+    .clothing-cart-btn i,
     .accessories-cart-btn i {
         font-size: 14px;
         padding: 3px;
     }
 
+    .clothing-detail h3,
     .accessories-detail h3{
         font-size: 25px;
     }
 
+    .clothing-detail span,
     .accessories-detail span{
         font-size: 20px;
     }
 }
 
-
 @media only screen and (max-width: 960px){
     .searchbar{
         display: none;
     }
-    
-    /* .nav-active{
-        visibility: visible;
-    } */
-
 
     /* carousal */
     .carousel-item img{
@@ -145,16 +111,14 @@
     }
 }
 
-
 @media only screen and (max-width: 820px){
     .carousel-item img{
         width: 600px;
         height: 500px;
     }
 
-    .clothing-products{
-        gap: 50px;
-    }
+    /* Clothing and accessories sections */
+    .clothing-products,
     .accessories-products{
         gap: 50px;
     }
@@ -165,7 +129,6 @@
     }
 }
 
-
 @media only screen and (max-width: 720px){
     .carousel-item img{
         width: 500px;
@@ -173,8 +136,8 @@
     }
 }
 
-
 @media only screen and (max-width: 620px){
+    /* nav-bar */
     .nav-box{
         padding: 0 15px;
     }
@@ -210,94 +173,59 @@
     }
 }
 
-
 @media only screen and (max-width: 590px){   
-    .clothing-list-item{
-        height: 250px;
-        max-width: 200px;
-    }    
-
-    .clothing-btn i:not(.clothing-cart-btn i) {
-        font-size: 14px;
-        height: 30px;
-        width: 30px;
-    }
-    
-    .clothing-cart-btn {
-        height: 30px;        
-        width: 100px;
-        padding: 7px;
-    }
-
-    .clothing-cart-btn span{
-        font-size: 12px;
-        padding-right: 3px;
-    }
-
-    .clothing-cart-btn i {
-        font-size: 12px;
-        padding: 3px;
-    }
-
-    .clothing-detail h3{
-        font-size: 20px;
-    }
-
-    .clothing-detail span{
-        font-size: 18px;
-    }
-
-    .clothing-products{
-        gap: 30px;
-    }
-    
-    .clothing-list img{
-        max-width: 230px;
-    }
-
-    /* accessories */
+    /* Clothing and accessories sections */
+    .clothing-list-item,
     .accessories-list-item{
         height: 250px;
         max-width: 200px;
     }    
 
+    .clothing-btn i:not(.clothing-cart-btn i),
     .accessories-btn i:not(.accessories-cart-btn i) {
         font-size: 14px;
         height: 30px;
         width: 30px;
     }
     
+    .clothing-cart-btn,
     .accessories-cart-btn {
         height: 30px;        
         width: 100px;
         padding: 7px;
-
     }
+
+    .clothing-cart-btn span,
     .accessories-cart-btn span{
         font-size: 12px;
         padding-right: 3px;
     }
 
+    .clothing-cart-btn i,
     .accessories-cart-btn i {
         font-size: 12px;
         padding: 3px;
     }
+
+    .clothing-detail h3,
     .accessories-detail h3{
         font-size: 20px;
     }
 
+    .clothing-detail span,
     .accessories-detail span{
         font-size: 18px;
     }
 
+    .clothing-products,
     .accessories-products{
         gap: 30px;
     }
 
+    .clothing-list img,
     .accessories-list img{
         max-width: 230px;
     }    
-
 
     .footer-list{
         gap: 20px;
@@ -368,110 +296,68 @@
         height: 360px;
     }
 
-
-    /* clothing */
-    .clothing-products{
-        padding: 0 10px;
-    }
-    .clothing-list-item{
-        height: 220px;
-        max-width: 150px;
-    }    
-
-    .clothing-btn i:not(.clothing-cart-btn i) {
-        font-size: 12px;
-        height: 25px;
-        width: 25px;
-    }
-    
-    .clothing-cart-btn {
-        height: 25px;        
-        width: 85px;
-        padding: 6px;
-    }
-
-    .clothing-cart-btn span{
-        font-size: 10px;
-        padding-right: 2px;
-    }
-
-    .clothing-cart-btn i {
-        font-size: 10px;
-        padding: 2px 3px;
-    }
-
-    .clothing-detail h3{
-        font-size: 16px;
-        font-weight: 600;
-    }
-
-    .clothing-detail p {
-        font-size: 13px;
-    }
-    .clothing-detail span{
-        font-size: 16px;
-    }
-
-    .clothing-products{
-        gap: 20px;
-    }
-    
-    .clothing-list img{
-        max-width: 200px;
-    }
-
-
-    /* accessories */
+    /* Clothing and accessories sections */
+    .clothing-products,
     .accessories-products{
         padding: 0 10px;
     }
+    .clothing-list-item,
     .accessories-list-item{
         height: 220px;
         max-width: 150px;
     }    
 
+    .clothing-btn i:not(.clothing-cart-btn i),
     .accessories-btn i:not(.accessories-cart-btn i) {
         font-size: 12px;
         height: 25px;
         width: 25px;
     }
     
+    .clothing-cart-btn,
     .accessories-cart-btn {
         height: 25px;        
         width: 85px;
         padding: 6px;
     }
 
+    .clothing-cart-btn span,
     .accessories-cart-btn span{
         font-size: 10px;
         padding-right: 2px;
     }
 
+    .clothing-cart-btn i,
     .accessories-cart-btn i {
         font-size: 10px;
         padding: 2px 3px;
     }
 
+    .clothing-detail h3,
     .accessories-detail h3{
         font-size: 16px;
         font-weight: 600;
     }
 
-    .accessories-detail p {
+    .clothing-detail p,
+    .accessories-detail p{
         font-size: 13px;
     }
+    
+    .clothing-detail span,
     .accessories-detail span{
         font-size: 16px;
     }
 
+    .clothing-products,
     .accessories-products{
         gap: 20px;
     }
     
+    .clothing-list img,
     .accessories-list img{
         max-width: 200px;
     }
-
 
     /* show cart */
     .show-cart {

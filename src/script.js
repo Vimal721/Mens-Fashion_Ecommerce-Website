@@ -1,5 +1,5 @@
-// Scroll event
-document.addEventListener('DOMContentLoaded', function () {
+// smooth scrolling
+function scrollToSection() {
     var navHeight = 140; 
     
     var clothingButton = document.querySelector('.top-nav ul li:nth-child(2) a');
@@ -25,26 +25,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     footerButton.addEventListener('click', function (event) {
         event.preventDefault();
-        var sectionTop = footerSection.offsetTop - navHeight;
+        var sectionTop = footerSection.offsetTop - 110;
         window.scrollTo({ top: sectionTop, behavior: 'smooth' });
     });
-});
+}
+scrollToSection()
 
 
-// show cart toggle
-const cartButton = document.querySelector(".cart-button");
-const cartContainer = document.querySelector(".show-cart");
-const closeCart = document.querySelector('.close-cart');
+// for show cart conatiner
+function initializeCart() {
+    const cartButton = document.querySelector(".cart-button");
+    const cartContainer = document.querySelector(".show-cart");
+    const closeCart = document.querySelector('.close-cart');
 
-cartButton.addEventListener("click", function() {
-    cartContainer.classList.toggle("show-cart-active");
-});
-closeCart.addEventListener("click", function() {
-    cartContainer.classList.remove("show-cart-active");
-});
+    cartButton.addEventListener("click", function() {
+        cartContainer.classList.toggle("show-cart-active");
+    });
+    closeCart.addEventListener("click", function() {
+        cartContainer.classList.remove("show-cart-active");
+    });
+}
+initializeCart()
 
-// adding clothing and accessories products in showCart
-document.addEventListener('DOMContentLoaded', function() {
+
+// add to cart interaction
+function handleAddToCart() {
     const cartButtons = document.querySelectorAll('.clothing-cart-btn, .accessories-cart-btn');
     const cartContainer = document.querySelector('.show-cart');
     const itemsAdded = document.getElementById('items-added');
@@ -54,14 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalPrice = 0;
     const itemQuantities = {};
 
-    // when add to cart button is clicked
     cartButtons.forEach(button => {
         button.addEventListener('click', function(event) {
             const itemSection = button.closest('.clothing-list, .accessories-list');
+
             const itemName = itemSection.querySelector('.clothing-detail h3, .accessories-detail h3').textContent;
             const itemPriceString = itemSection.querySelector('.clothing-detail span, .accessories-detail span').textContent;
             const itemPrice = parseFloat(itemPriceString.replace('Rs ', ''));
 
+            // checking whether the item is already exists in cart and updates the quantity in item-num
             if (itemQuantities[itemName]) {
                 itemQuantities[itemName]++;
             } else {
@@ -71,9 +77,11 @@ document.addEventListener('DOMContentLoaded', function() {
             itemCount++;
             itemsAdded.textContent = itemCount;
 
+            // calculation of item price and its total
             totalPrice += itemPrice;
             cartTotal.textContent = totalPrice.toLocaleString();
 
+            // Checking if the item doesn't exist, create a new cart item and append it to the cart container
             const existingCartItem = cartContainer.querySelector(`[data-item="${itemName}"]`);
             if (existingCartItem) {
                 const itemQuantityElement = existingCartItem.querySelector('.item-num');
@@ -103,11 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 cartContainer.appendChild(cartItem);
 
+                // Added event listeners for the plus and minus buttons on the cart item
                 const itemMinus = cartItem.querySelector('.item-minus');
                 const itemPlus = cartItem.querySelector('.item-plus');
 
                 itemMinus.addEventListener('click', ()=>{
                     itemQuantities[itemName]--;
+
                     const itemQuantityElement = cartItem.querySelector('.item-num');
                     itemQuantityElement.textContent = itemQuantities[itemName];
 
@@ -124,8 +134,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 itemPlus.addEventListener('click', ()=>{
                     itemQuantities[itemName]++;
+                    
                     const itemQuantityElement = cartItem.querySelector('.item-num');
                     itemQuantityElement.textContent = itemQuantities[itemName];
+
+                    itemCount++;
+                    itemsAdded.textContent = itemCount;
 
                     totalPrice += itemPrice; 
                     cartTotal.textContent = totalPrice.toLocaleString();
@@ -133,4 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+}
+handleAddToCart();
+
+
+
