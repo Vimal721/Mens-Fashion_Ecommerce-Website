@@ -32,7 +32,7 @@ function scrollToSection() {
 scrollToSection()
 
 
-// for show cart conatiner
+// for show cart container
 function initializeCart() {
     const cartButton = document.querySelector(".cart-button");
     const cartContainer = document.querySelector(".show-cart");
@@ -77,7 +77,6 @@ function handleAddToCart() {
             itemCount++;
             itemsAdded.textContent = itemCount;
 
-            // calculation of item price and its total
             totalPrice += itemPrice;
             cartTotal.textContent = totalPrice.toLocaleString();
 
@@ -151,4 +150,121 @@ function handleAddToCart() {
 handleAddToCart();
 
 
+// product details
+function productDetailsPage() {
+    const clothingItems = document.querySelectorAll(".clothing-list");
+    const accessoriesItems = document.querySelectorAll(".accessories-list");
 
+    function redirectToProductDetailsPage(itemType, itemName, itemBrand, itemPrice, itemImageSrc) {
+        const url = `product-details.html?itemName=${encodeURIComponent(itemName)}&itemBrand=${encodeURIComponent(itemBrand)}&itemPrice=${encodeURIComponent(itemPrice)}&itemType=${encodeURIComponent(itemType)}&itemImageSrc=${encodeURIComponent(itemImageSrc)}`;
+        window.location.href = url;
+    }
+
+    function handleItemClick(event) {
+        const clickedItem = event.target.closest('.clothing-list, .accessories-list');
+        if (!clickedItem) return;
+
+        const itemType = clickedItem.classList.contains("clothing-list") ? "clothing" : "accessories";
+
+        // Redirect to product details page if clicked on buttons
+        if (event.target.closest('.clothing-btn') || event.target.closest('.accessories-btn')) {
+            return;
+        }
+
+        const itemName = clickedItem.querySelector(`.${itemType}-detail h3`).textContent;
+        const itemBrand = clickedItem.querySelector(`.${itemType}-detail p`).textContent;
+        const itemPrice = clickedItem.querySelector(`.${itemType}-detail span`).textContent;
+        const itemImageSrc = clickedItem.querySelector(`.${itemType}-list-item img`).getAttribute('src');
+
+        redirectToProductDetailsPage(itemType, itemName, itemBrand, itemPrice, itemImageSrc);
+    }
+    
+    clothingItems.forEach(function (item) {
+        item.addEventListener("click", handleItemClick);
+    });
+
+    accessoriesItems.forEach(function (item) {
+        item.addEventListener("click", handleItemClick);
+    });
+
+    // Get the query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemName = urlParams.get('itemName');
+    const itemBrand = urlParams.get('itemBrand');
+    const itemPrice = urlParams.get('itemPrice');
+    const itemType = urlParams.get('itemType');
+    const itemImageSrc = urlParams.get('itemImageSrc');
+
+    // Display the item details in the .product div element
+    if (itemName && itemBrand && itemPrice && itemType && itemImageSrc) {
+        const productDetails = document.querySelector(".product");
+        const productHTML = `
+            <div class="product-list">
+                <div class="item-image">
+                    <img src="${itemImageSrc}" alt="${itemName}">
+                </div>
+
+                <div class="item-details">
+                    <h3>${itemName}</h3>
+                    <p> ${itemType}</p>
+                    <p> ${itemBrand}</p>
+                    <p> ${itemPrice}</p>
+                    
+                    <div class="${itemType}-cart-btn">
+                        <i class="ri-shopping-bag-line"></i>
+                        <span>Add to Cart</span>
+                    </div>
+
+                </div>
+                
+                
+            </div>
+        `;
+        productDetails.innerHTML = productHTML;
+    }
+}
+productDetailsPage();
+
+
+// similar products
+function similarProducts(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemType = urlParams.get('itemType');
+
+    let containerClass = '';
+    let otherContainerClass = '';
+    if (itemType === 'clothing') {
+        containerClass = '.clothing-products-page';
+        otherContainerClass = '.accessories-products-page';
+    } else if (itemType === 'accessories') {
+        containerClass = '.accessories-products-page';
+        otherContainerClass = '.clothing-products-page';
+    }
+
+    const productsContainer = document.querySelector(containerClass);
+    const otherContainer = document.querySelector(otherContainerClass);
+    otherContainer.style.display = 'none';
+
+    // random list items
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Function to show only 3 random items from the targeted list
+    function showRandomItems(containerClass) {
+        const items = document.querySelectorAll(`${containerClass} .clothing-list, ${containerClass} .accessories-list`);
+        const shuffledItems = shuffle(Array.from(items)).slice(0, 3);
+        productsContainer.innerHTML = ''; // Clear existing content
+        shuffledItems.forEach(item => {
+            productsContainer.appendChild(item.cloneNode(true));
+        });
+        productsContainer.style.display = 'flex';
+    }
+
+    showRandomItems(containerClass);
+};
+similarProducts()
